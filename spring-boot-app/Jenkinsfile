@@ -1,0 +1,26 @@
+pipeline{
+    agent any
+    tools{
+        jdk 'jdk11'
+        maven 'MAVEN3'
+        
+    }
+    stages{
+        stage("git Checkout")
+        {
+           steps
+            {
+                 git url: 'https://github.com/veeracloudev/java_ci_cd.git', branch: 'main'
+                 sh 'ls -l'
+            }
+
+        }
+        stage("Build and generate artifact"){
+            steps{
+                sh 'mvn clean install'
+            }
+        }   
+        
+        
+    }    
+    }
