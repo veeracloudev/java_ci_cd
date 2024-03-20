@@ -11,7 +11,7 @@ pipeline{
         {
            steps
             {
-                 git url: 'https://github.com/veeracloudev/java_ci_cd.git', branch: 'main'
+                 git url: 'https://github.com/vignesh810/profile.git', branch: 'main'
                  sh 'ls -l'
             }
 
